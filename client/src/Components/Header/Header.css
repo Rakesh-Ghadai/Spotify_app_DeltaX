@@ -1,0 +1,10 @@
+.main_header{
+    width: 100 vw;
+    height: 50px;
+    border: 1px solid black;
+}
+.main_div{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+}
