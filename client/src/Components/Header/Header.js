@@ -10,10 +10,10 @@ const Header = () => {
                     <div className='home'>
                            <p>Home</p> 
                     </div>
-                    <div>
+                    <div className='main_search_field'>
                         <div className='search_field'>
                             <button><BsSearch className="search_icon"/></button>
-                            <input type='text' className='search_area'/>
+                            <input type='text' placeholder='search' className='search_area'/>
                         </div>
                     </div>
                 </div>
