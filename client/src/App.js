@@ -5,6 +5,7 @@ import Login from './Components/Signup-Login/Login';
 import Signup from './Components/Signup-Login/Signup';
 import Protected from './Components/Protected/Protected';
 import Error404 from './Components/404 Error/Error404';
+import AddSongForm from './Components/Add Song Artist/AddSongForm';
 
 const App =()=>{
   return(
@@ -13,6 +14,7 @@ const App =()=>{
       <Route path="/login" element={<Login></Login>}></Route>
       <Route path="/signup" element={<Signup></Signup>}></Route>
       <Route path="/" element={<Protected><HomePage/></Protected>}></Route>
+      <Route path='add' element={<AddSongForm/>}></Route>
       <Route path="*" element={<Error404/>}></Route>
     </Routes>
     </>
