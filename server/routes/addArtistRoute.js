@@ -20,9 +20,7 @@ router.post("/addartist", async(req,res)=>{
 
 router.get("/artists", async (req,res)=>{
     try{
-            // console.log(verifyToken)
                 const artistData = await addArtistModal.find();
-                //console.log(artistData)
                 res.status(200).send({artist:artistData});
         
     }catch(err){
@@ -41,7 +39,6 @@ router.post("/updateArtist",async(req,res)=>{
                 {
                     console.log("inside if")
                     console.log(artists)
-                    // let song=[...artists[0].songNames,req.body.songName];
                     let song=req.body.songName;
                     console.log(song);
                     console.log((artists[0].artistName))
