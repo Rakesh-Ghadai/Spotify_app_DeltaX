@@ -28,9 +28,6 @@ export default function Signup() {
     }else{
       window.alert("Passwords are not matching")
     }
-      // console.log(e.target.elements.email.value)
-      // console.log(e.target.elements.password.value)
-      // console.log(e.target.elements.cpassword.value)
   }
 
   useEffect(() => {
@@ -67,7 +64,7 @@ export default function Signup() {
     <>
     <div className='S-container'>
       <div className='S-formDiv'>
-          <h1>Register</h1>
+          <h1>User Register</h1>
           <p>Create New Account</p>
           <form action='/signup' method='POST' onSubmit={handleSignup} >  
               <input id='S-username' type="text" required={true} name='username' placeholder='ENTER YOUR NAME'/>

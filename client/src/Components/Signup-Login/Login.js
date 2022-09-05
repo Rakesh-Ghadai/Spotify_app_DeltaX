@@ -18,8 +18,7 @@ export default function Login() {
       password : e.target.elements.password.value
     })
     setDataSent(true)
-      // console.log(e.target.elements.email.value)
-      // console.log(e.target.elements.password.value)
+     
   }
 
   useEffect(() => {
@@ -35,9 +34,7 @@ export default function Login() {
       }).then((response)=>{
         let token = response.data.authToken
         setCookie("jwt", token,  { path: '/' , expires:new Date(Date.now()+3.6e+6)})
-        // console.log(token)
-        // console.log(response.data.authToken)
-        // window.alert("Login successfull")
+        
         navigate("/")
       }).catch((err)=>{
           console.log(err)
@@ -64,7 +61,7 @@ export default function Login() {
     <>
     <div className='L-container'>
       <div className='L-formDiv'>
-          <h1>Member Login</h1>
+          <h1>Spotify User Login</h1>
           <p>Enter your credentials to access your account</p>
           <form action='/login' method='POST' onSubmit={handleLogin}>        
               <input id='L-userid' type="email" required={true}  name='email' placeholder='USER ID'/>

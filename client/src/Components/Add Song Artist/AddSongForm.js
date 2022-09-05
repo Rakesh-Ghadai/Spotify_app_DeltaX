@@ -41,13 +41,7 @@ const AddSongForm = () => {
            setUsers(res.data.artist);
 
           console.log("users",users)
-          // let tempArtist=[];
-          // for(let i=0;i<res.data.artist.length;i++)
-          // {
-          //   tempArtist.push(res.data.artist[i].artistName)
-          // }
-          //  setArtists(tempArtist);
-          // console.log("artist=",artists);
+          
       }).catch(err=>{
           console.log(err)
       })
@@ -151,7 +145,7 @@ navigate("/")
                         <p>Date Released</p>
                     </div>
                     <div className='date_text'>
-                        <input className='date_text_input' type='text' required={true} onChange={e=>setSongData({...songData,dateReleased: e.target.value})}/>
+                        <input className='date_text_input' type='text' placeholder="e.g.(01-jan-1999)" required={true} onChange={e=>setSongData({...songData,dateReleased: e.target.value})}/>
                     </div>
                 </div>
 
