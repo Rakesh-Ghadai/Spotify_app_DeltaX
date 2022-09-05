@@ -20,27 +20,10 @@ router.post("/addartist", async(req,res)=>{
 
 router.get("/artists", async (req,res)=>{
     try{
-        const token = req.headers.authorization;
-        const verifyToken = jwt.verify(token, process.env.SECRET_KEY)
-        console.log(verifyToken)
-        if(verifyToken){
             // console.log(verifyToken)
-            const userDetail = await signupModal.find({email : verifyToken }) 
-            // console.log(userDetail)
-
-            if(userDetail.length){
                 const artistData = await addArtistModal.find();
-                res.status(200).send({artist:artistData, userData : userDetail});
-                console.log(userDetail)
-                
-            }else{
-                res.status(409).send("Unauthorized user")
-            }
-            // console.log(userDetail)
-
-        }else{
-            res.status(409).send("Unauthorized user")
-        }
+                //console.log(artistData)
+                res.status(200).send({artist:artistData});
         
     }catch(err){
         console.log(err)
@@ -48,6 +31,34 @@ router.get("/artists", async (req,res)=>{
         // console.log(err)
     }
 
+})
+router.post("/updateArtist",async(req,res)=>{
+    try{
+        console.log(req.body)
+        req.body.artistsNames.forEach(element => {
+            addArtistModal.find({artistName:element}).then((artists)=>{
+                if(artists.length)
+                {
+                    console.log("inside if")
+                    console.log(artists)
+                    // let song=[...artists[0].songNames,req.body.songName];
+                    let song=req.body.songName;
+                    console.log(song);
+                    console.log((artists[0].artistName))
+                   addArtistModal.findOneAndUpdate({artistName:artists[0].artistName},{$push:{songNames:song}}).then((data)=>{
+                        console.log(data);
+                   }).catch((e)=>{
+                    console.log(e);
+                   })
+                    
+                }
+            })
+        });
+    res.status(200).send("successful");
+    }
+    catch(err){
+        res.status(400).send(err);
+    }
 })
 
 

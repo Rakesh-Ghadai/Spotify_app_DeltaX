@@ -6,7 +6,7 @@ const addSongSchema = new mongoose.Schema({
         required:true
     },
     dateReleased:{
-        type:Date,
+        type:String,
         required:true
     },
     image:{
@@ -15,6 +15,10 @@ const addSongSchema = new mongoose.Schema({
     },
     artistNames:{
         type:Array,
+        required:true
+    },
+    ratings:{
+        type:Number,
         required:true
     }
 })

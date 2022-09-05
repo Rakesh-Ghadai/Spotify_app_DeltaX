@@ -1,3 +1,8 @@
+.box_div{
+    width: 100w;
+    border: 1px solid red;
+    height: 100vh;
+}
 .sub_heading{
     display: flex;
     flex-direction: row;
@@ -26,15 +31,20 @@
     background-color: white;
     color: black;
     cursor: pointer;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
 }
 .add_songs button:active{
     color: green;
+    text-decoration: none;
 }
 .plus{
     margin-left: 2px;
     margin-right: 6px;
     font-size: 2em;
 }
+
 .after_plus{
     font-size: 1em;
     margin-top: 8px;
@@ -49,31 +59,69 @@
     width: 90vw;
     /* background-color: red; */
 }
+
+.table_image{
+    height: 85px;
+    width: 150px;
+    margin: 4px;
+    margin-bottom: 2px;
+}
 .table_one td{
-    border: 1px solid black;
+    /* border: 1px solid black; */
+}
+.table_star{
+    display: flex;
+    flex-direction: row;
+    margin-left:30px ;
+}
+.table_star_btn{
+    margin-top: -10px;
+}
+
+.table_one{
+    border-collapse: collapse;
+}
+.table_one td{
+    border-top:none ;
 }
 .table_one thead td{
-    width: 266px;
+    width: 276px;
     text-align: center;
     background-color: rgb(54, 51, 51);
     color: white;
     font-size: 20px;
     font-weight: 500;
+    border-left:none ;
+    border-right: none;
 }
 .table_one tbody{
     display: block;
     height: 215px;
-    overflow-y: auto;
+    overflow-x: auto;
     float: left;
     width: 100%;
 
 }
-.table_one tbody td{
-    width: 280px;
+.table_one tbody tr td{
+    width: 276px;
     height: 100px;
     text-align: center;
-    border: 1px solid red;
+    /* border-top : 1px solid black; */
+    margin: 0;
+    /* border-left:1px solid black ; */
+    border-right:1px solid black ;
+    /* border-left: none; */
+    /* border-right: 2px solid black; */
+    border-top: none;
+    border-bottom: none;
+    
 }
+/* .first_td{
+    border-left: none;
+}
+.second_td{
+    border-right: 2px solid black;
+} */
 .table_one tr{
     display: block;
 }
@@ -91,21 +139,27 @@
 .table_two{
     border: 1px solid black;
     margin-top: 20px;
-    margin-bottom: 50%;
+    margin-bottom: 5px;
     margin-left:70px ;
-    height: 270px;
+    height: 220px;
     width: 90vw;
+    border-collapse: collapse;
 }
 .table_two td{
-    border: 1px solid black;
+    border-top:none ;
 }
 .table_two thead td{
-    width: 266px;
+    width: 280px;
     text-align: center;
     background-color: rgb(54, 51, 51);
     color: white;
     font-size: 20px;
     font-weight: 500;
+    border-left:none ;
+    border-right: none;
+}
+.table_two thead .thead_song{
+    width: 822px;
 }
 .table_two tbody{
     display: block;
@@ -119,7 +173,10 @@
     width: 280px;
     height: 100px;
     text-align: center;
-    border: 1px solid red;
+    border-left:1px solid black ;
+}
+.table_two .td_song{
+    width: 780px;
 }
 .table_two tr{
     display: block;
