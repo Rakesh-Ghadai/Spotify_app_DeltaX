@@ -19,9 +19,6 @@ router.post("/addsong", async(req,res)=>{
 router.post("/updateRating", async(req,res)=>{
     try{
         addSongModal.find({songName:req.body.songName}).then((songsData)=>{
-            // console.log("song",songsData)
-            // let Temprating=songsData[0].ratings;
-            // console.log("temp",Temprating)
             let resRating=req.body.ratings;
         addSongModal.findOneAndUpdate({songName:req.body.songName},{$set:{ratings:resRating}}).then((data)=>{
             console.log(data);
