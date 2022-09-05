@@ -6,8 +6,8 @@ const addArtistSchema = new mongoose.Schema({
         required:true
     },
     dateOfBirth:{
-        type:Date,
-        required:true
+        type:String,
+        required:true                                
     },
     bio:{
         type:String,
@@ -22,3 +22,15 @@ const addArtistSchema = new mongoose.Schema({
 const addArtistModal = mongoose.model("addArtist", addArtistSchema)
 
 module.exports = addArtistModal;
+
+
+
+
+
+
+
+
+// {
+//     artist:[rakesh,mahesh],
+//     song:"bjhghv"
+// }
